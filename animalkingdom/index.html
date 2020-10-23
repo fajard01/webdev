@@ -1,0 +1,233 @@
+<!-- DOCSTYLE html -->
+<!-- Autor: Danny Fajardo 
+   Assignment submission for Coursera course Responsive Web Design. This website aims to present different animal classes with representative animal examples with their descriptions. It utilizes bootstrap stylesheet as the ready made stylesheet, navigation, and handlebars to implement templates. This also incorporates modal window,
+   slideshow and searchbox functionalities.
+-->
+
+<html lang="en">
+    <head>
+		<title>Animal Kingdom</title>
+		
+        <!-- include our libraries and css files -->
+        <script src="js/jquery-2.1.4.min.js"></script>
+        <script src="js/handlebars-v3.0.3.js"></script>
+
+        <script src="js/bootstrap.min.js"></script>
+        <script src="AnimalsData.js"></script>
+        <script src="assignment.js"></script>
+
+        <!-- using ready-made bootstrap stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="assignment.css" rel="stylesheet">
+    </head>
+	
+    <body role="document">
+        <div class="container">
+            <!-- title -->
+            <div class="header">
+                <h1 class="title">Animal Kingdom</h1>
+            </div>    
+			
+			<!-- navigation bar with collapsed / uncollapsed toggle -->
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">      
+					<!-- start collapsed navbar-->
+					<div class="navbar-header">
+						<button 
+							type="button" 
+							class="navbar-toggle collapsed nav-style" 
+							data-toggle="collapse" 
+							data-target="#main_navbar" 
+							aria-expanded="false">Navigate
+						</button>
+					</div><!-- / collapsed navbar-->
+
+					<!-- start un-collapsed navbar-->
+					<div
+						 class="collapse navbar-collapse" 
+						 id="main_navbar">
+						<ul class="nav navbar-nav">
+							<li role="" class="active nav-style"><a href="#" id="category-tab">Classes</a></li>
+							<li role="" class="nav-style"><a href="#" id="type-tab">Examples</a></li>
+							<li role="" class="nav-style"><a href="#" id="detail-tab">Description</a></li>
+						</ul>
+						<div class="navbar-form navbar-right">
+							<input id="searchbox" type="text" class="form-control" placeholder="Search for an animal...">
+						</div>
+					</div><!-- / un-collapsed navbar-->
+				</div> <!-- /container -->  
+        	</nav>
+			
+            <!-- main empty div content to fill with javascript and templates -->
+            <div id="content"  class="container-fluid"  role="main">
+            </div>
+			
+			<!-- empty div for the image modals -->
+			<div id="modal-container">
+			</div>
+			
+        </div> <!-- / container -->
+	</body>
+    
+	<!-- This template shows each animal classes in a row with a representative image of each class with 
+		 the name caption. 
+	 -->
+	<script id="category-template" type="text/x-handlebars-template">
+		<div class="row">
+			<br>
+			<div>
+				<h1 class="category">Select Animal Class:</h1>
+				<br>
+			</div>
+
+			{{#each category}}
+				<div class="col-md-4"> 
+					<div class="category-list"  data-id="{{@index}}">
+						<img class="crop-img" src="{{animals.0.image1}}" alt=""/> 
+						<div class="caption">
+							<h3> {{name}} </h3>
+						</div>
+					</div>
+				</div> <!-- / col -->            
+			{{/each}}
+
+		</div> <!-- / row -->
+	</script>  
+
+	<!-- This template shows each examples from a given category with a representative image for each type.
+         I've added a button that pops a modal slideshow from the slideshow template.
+    -->
+	<script id="type-template" type="text/x-handlebars-template">
+		<div class="row" data-id={{@index}}>
+			<!-- xs-12 : small display shows a single column (taking up 12 grid columns)-->
+			<!-- md-3 : medium and up displays use 3 grid columns per column -->
+			<div>
+				<h1 class="category">Select from Examples of {{name}}:</h1>
+				<!-- button for the slideshow -->
+				<button id="slideshow-button" type="button" class="btn btn-default slide-button">Click Here to View {{name}} Slides</button>
+			</div>
+			<br>
+			<br>
+
+			{{#each animals}}
+				<div class="col-xs-12 col-md-3">
+					<div class="type-list" data-id={{@index}}>
+						<img class="thumbnail-img" src="{{image1}}" alt="{{name}}"/> 
+						<div class="caption">
+							<h3>{{name}}</h3>
+						</div>
+					</div>
+				</div> <!-- / col -->
+			{{/each}}
+
+		</div> <!-- / row -->
+	</script>
+
+	<!-- This template shows two images from a representative animal together with its description.
+         I've added a functionality wherein a modal image pops up as a close up when either image is clicked.
+    -->
+	<script id="detail-template" type="text/x-handlebars-template">
+		<div class="row">
+			<div>
+				<h1 class="category" data-id={{@index}}>{{name}}:</h1>
+				<p class="expand-view">(Click Image for Closeup)</p>
+			</div>
+			<br>
+			<div class="row" id="pop">
+				<!-- the getSource onclick function extracts the source of the clicked image -->
+				<div class="col-md-6">
+					<img onclick="getSource(this.src)" class="main-img" src="{{image1}}" alt="{{name}}"/>
+				</div>
+				<div class="col-md-6">
+					<img  onclick="getSource(this.src)" class="main-img" src="{{image2}}" alt="{{name}}"/> 
+				</div>
+			</div>
+			<br>
+			<div class="info">
+				<p>{{description}}</p>
+			</div>
+		</div>
+	</script>
+	
+	<!-- This templates pops up a modal image of an animal when the image is clicked in the description tab.
+		 It is connected to the empty image-modal-container of the min html.
+    -->
+	<script id="image-modal-template" type="text/x-handlebars-template">
+		<!-- div for the modal dialog to pop out animal image -->
+			<div id="modalImage" class="modal fade" role="dialog">
+				<div class="modal-dialog"  style="width:1000">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="col-md-12"></div>
+							<img id="current-image" style="width:100%" src="{{url}}"/>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div> <!-- / modal-content -->
+				</div> <!-- / modal-dialog -->
+      		</div> <!-- / imageModal -->
+	</script>
+
+	<!-- This is the template for the slideshow that pops up whenever the button from the type page
+         is clicked.
+    -->
+	<script id="slideshow-modal-template" type="text/x-handlebars-template">
+		<div id="modalSlideshow" class="modal fade" role="dialog">
+			<div class="modal-dialog"  style="height:1000">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h2 class="modal-title">{{name}}</h2>
+					</div>
+
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-md-12">
+								<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+									<ol class="carousel-indicators">
+										<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+										<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+										<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+										<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+										<li data-target="#carousel-example-generic" data-slide-to="4"></li>
+										<li data-target="#carousel-example-generic" data-slide-to="5"></li>
+										<li data-target="#carousel-example-generic" data-slide-to="6"></li>
+										<li data-target="#carousel-example-generic" data-slide-to="7"></li>
+									</ol>
+
+									<!-- Wrapper for slides -->
+									<div class="carousel-inner" role="listbox">
+
+										{{#each images}}
+											<div class="item {{#if @first}}active{{/if}}">
+												<img class="carousel-img img-responsive center-block" src="{{src}}" alt=""/> 
+											</div> <!-- / carousel item --> 
+										{{/each}}
+
+									</div> <!-- / carousel-inner -->
+
+									<!-- Controls -->
+									<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+										<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+										<span class="sr-only">Previous</span>
+									</a>
+									<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+										<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+										<span class="sr-only">Next</span>
+									</a>
+
+								</div> <!-- / carousel --> 
+							</div> <!-- / col -->
+						</div> <!-- / row -->
+					</div> <!-- / modal-body -->
+					
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div> <!-- modal-content -->
+			</div> <!-- / modal-dialog -->
+		</div> <!-- / modalSlideshow -->
+	</script>
+		
+</html>
