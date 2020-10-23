@@ -1,0 +1,192 @@
+/***** GLOBAL *****/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  color: #fff;
+  background-color: black;
+  font-family: 'Baloo Tamma 2', cursive;
+  font-family: 'Quicksand', sans-serif;
+}
+
+/***** NAVIGATION BAR *****/
+#header-nav {
+  background: transparent;
+  border-radius: 0;
+  border: 0;
+  filter: invert(1);
+  padding-top: 0;
+}
+
+/***** LOGO AND BRAND *****/
+#logo-img {
+  style.display: none;
+}
+
+.m-name {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/***** SOCIAL MEDIA ICONS *****/
+.social-media-icon {
+  /* margin-top: 20px; */
+  margin-left: 20px;
+}
+
+/***** MAIN IMAGE *****/
+#greeter-img {
+  padding: 0;
+  margin: 0;
+}
+
+.image {
+  background-image: url("../img/picchu-header.jpg");
+  background-size: cover;
+  height: 1200px;
+  margin: 0;
+  padding: 0;
+}
+
+.header-title {
+  padding-top: 200px;
+  text-align: center;
+  color: black;
+}
+
+/***** 1News! TEXT BEGIN *****/
+.blog {
+  height: 400px;
+  margin-bottom: 250px;
+}
+
+.intro {
+  margin: 60px;
+  text-align: center;
+}
+
+.flag {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+}
+
+/***** IMAGE NAVIGATION LINKS *****/
+.img-row {
+  position: relative;
+  padding-bottom: 100px;
+}
+
+.link-img {
+  width: 100%;
+  transition: transform 1s;
+}
+
+#in:hover {
+  position: relative;
+  transform: scale(1.2);
+}
+
+#space:hover {
+  position: relative;
+  transform: scale(1.2);
+}
+
+#time:hover {
+  position: relative;
+  transform: scale(1.2);
+}
+
+#out:hover {
+  position: relative;
+  transform: scale(1.2);
+}
+
+.title {
+  color: white;
+  font-size: 2vw;
+  font-weight: bold;
+  margin-top: 20px;
+  /* margin: 0 auto; */
+  padding: 5px;
+  text-align: center;
+  position: absolute;
+}
+
+/***** MEDIA QUERIES *****/
+@media (max-width: 991px) {
+  .social-media-icon {
+    padding-top: 30px;
+  }
+}
+
+@media (min-width: 333px) and (max-width: 572px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h3 {
+    font-size: 1em;
+  }
+
+  .header-title {
+    padding-top: 250px;
+  }
+}
+
+/*
+@media (max-width: 332px) {
+  h1 {
+    font-size: 80%;
+  }
+
+  h3 {
+    font-size: 80%;
+  }
+
+  .header-title {
+    padding-top: 300px;
+  }
+} */
+.footer {
+  /* background: #152f4f; */
+  color: white;
+}
+
+.footer .links ul {
+  list-style-type: none;
+}
+
+.footer .links li a {
+  color: white;
+  transition: color 0.2s;
+}
+
+.footer .links li a:hover {
+  text-decoration: none;
+  color: #4180cb;
+}
+
+.footer .about-company i {
+  font-size: 25px;
+}
+
+.footer .about-company a {
+  color: white;
+  transition: color 0.2s;
+}
+
+.footer .about-company a:hover {
+  color: #4180cb;
+}
+
+.footer .location i {
+  font-size: 18px;
+}
+
+.footer .copyright p {
+  border-top: 1px solid rgba(255, 255, 255, .1);
+}
