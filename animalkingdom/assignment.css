@@ -1,0 +1,111 @@
+/* DOCTYPE css */
+.navbar-default {
+	background-color: #E3DBDE;
+}
+
+.nav-style {
+	font-style: oblique;
+}
+
+.nav-style:hover {
+    font-style: normal;
+}
+
+.active {
+    font-style: normal;
+	color: #550000;
+	font-weight: 800;
+}
+
+.title {
+    font-size: 50px;
+    color: #550000;
+}
+
+.crop-img {
+    max-height: 225px;
+    max-width: 100%;
+}
+
+.btn {
+	background-color: #E3DBDE;
+	color: #550000;
+}
+
+.btn:hover {
+	background-color: #FFFFFF;
+}
+
+.thumbnail-img {
+	height: 220px;
+	width: 100%;
+}
+
+.slide-button {
+	color: #550000;
+	font-style: oblique;
+}
+
+.slide-button.hover {
+	background-color: #E3DBDE;
+}
+
+.main-img {
+	border: solid;
+	border-color: #550000;
+	margin-left: 8%;
+}
+
+.category {
+	color: #550000;
+	font-style: oblique;
+}
+
+.info {
+	color: #550000;
+	font-size: 20px;
+}
+
+.animal {
+	color: #550000;
+	font-style: oblique;
+}
+
+.expand-view {
+	color: #550000;
+	font-style: oblique;
+}
+
+.carousel .item {
+    background: #E3DBDE;
+    border:1px solid #E0E0E0;
+    overflow:hidden;
+    margin-bottom:1em;
+    margin-top:1em;
+    padding:5px;
+}
+.carousel-inner > .item > img {
+    border: 1px solid #DDDDDD;
+    float: left;
+    margin: 0pt 3px;
+    padding: 2px;
+    height: none;
+    width:  100%;
+}
+
+.carousel-inner > .item > img:hover {
+    border: 1px solid #000000;
+}
+
+.carousel-inner {
+	height: 400px;
+	width: 100%;
+}
+
+h3 {
+    color: #550000;
+}
+
+h2 {
+	color: #550000;
+}
