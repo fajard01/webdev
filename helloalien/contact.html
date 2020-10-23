@@ -1,0 +1,98 @@
+<! DOCSTYLE html >
+<!-- 
+    Author: Danny Fajardo
+    The idea here is just purely animation. Using the same looping script, I generate a moving circle in the middle
+    and flashing information text. And I discovered the <marquee> tag which automates a ticker text. 
+-->
+<html>
+    <head>
+        <title>HeLLo EArthlings</title>
+        <!-- import bootstrap -->
+        <link rel="stylesheet"
+              type="text/css"
+              href="css/bootstrap.css"
+              />
+        <!-- import own stylesheet -->
+        <link rel="stylesheet"
+              type="text/css"
+              href="css/styles.css"
+              />
+        <!-- import JQuery -->
+        <script src="js/jquery-1.12.0.js"></script>
+        <!-- import own spinner and blinker script -->
+        <script src="js/spinner.js"></script>
+    </head>
+    <body>
+        <a href="index.html">HOMe</a> &nbsp;
+        <a href="about.html">AbOUt</a> &nbsp;
+		<a href="contact.html">ContaCT</a>
+        <div class="container">
+            <div class="row">
+                <!-- hypothetical image of a timeport controller -->
+                <div class="col-md-4">
+                    <img id="timeport" src="img/img_5.jpg" alt="TimePort"/img>
+                    <p class="name">TimePort Contoller L05T Report</p>
+                </div>
+                <!-- 35 images to spin! -->
+                <div class="col-md-4">
+                    <div id="spinner">
+                        <img class="spin" src="img/Rosa-1.png"/img>
+                        <img class="spin" src="img/Rosa-2.png"/img>
+                        <img class="spin" src="img/Rosa-3.png"/img>
+                        <img class="spin" src="img/Rosa-4.png"/img>
+                        <img class="spin" src="img/Rosa-5.png"/img>
+                        <img class="spin" src="img/Rosa-6.png"/img>
+                        <img class="spin" src="img/Rosa-7.png"/img>
+                        <img class="spin" src="img/Rosa-8.png"/img>
+                        <img class="spin" src="img/Rosa-9.png"/img>
+                        <img class="spin" src="img/Rosa-10.png"/img>
+                        <img class="spin" src="img/Rosa-11.png"/img>
+                        <img class="spin" src="img/Rosa-12.png"/img>
+                        <img class="spin" src="img/Rosa-13.png"/img>
+                        <img class="spin" src="img/Rosa-14.png"/img>
+                        <img class="spin" src="img/Rosa-15.png"/img>
+                        <img class="spin" src="img/Rosa-16.png"/img>
+                        <img class="spin" src="img/Rosa-17.png"/img>
+                        <img class="spin" src="img/Rosa-18.png"/img>
+                        <img class="spin" src="img/Rosa-19.png"/img>
+                        <img class="spin" src="img/Rosa-20.png"/img>
+                        <img class="spin" src="img/Rosa-21.png"/img>
+                        <img class="spin" src="img/Rosa-22.png"/img>
+                        <img class="spin" src="img/Rosa-23.png"/img>
+                        <img class="spin" src="img/Rosa-24.png"/img>
+                        <img class="spin" src="img/Rosa-25.png"/img>
+                        <img class="spin" src="img/Rosa-26.png"/img>
+                        <img class="spin" src="img/Rosa-27.png"/img>
+                        <img class="spin" src="img/Rosa-28.png"/img>
+                        <img class="spin" src="img/Rosa-29.png"/img>
+                        <img class="spin" src="img/Rosa-30.png"/img>
+                        <img class="spin" src="img/Rosa-31.png"/img>
+                        <img class="spin" src="img/Rosa-32.png"/img>
+                        <img class="spin" src="img/Rosa-33.png"/img>
+                        <img class="spin" src="img/Rosa-34.png"/img>
+                        <img class="spin" src="img/Rosa-35.png"/img>
+                        <img class="spin" src="img/Rosa-36.png"/img>
+                    </div>
+                </div>
+                <!-- the flashing text -->
+                <div class="col-md-4" id="report">
+                    <h1 class="h1_report">!--> probe frequencies locating sector earth timeport --></h1>
+                </div>
+            </div>
+        </div>
+        <!-- I discovered the <marquee> tag and ticker class that easily creates a ticker -->
+        <marquee behavior="scroll" direction="left" class="ticker"
+                 onmouseover="this.stop();"
+                 onmouseout="this.start();">**hover to stop** ...uncovering contact juncture... **hover to stop** ...scanning earth field... **hover to stop** ...field frequencies analyzed... **hover to stop** ...electronic trap engaged... **hover to stop** ...electron frequencies converted... **hover to stop** ...data exchange established... **hover to stop**  
+        </marquee>
+        <!-- decided on a bar rather than a button -->
+        <button id="button" type="button" class="btn btn-primary btn-block" onclick="alert('TimeLock is bound and established at:\n\n br1ghtch1p@gmail.com\n\nYou may proceed with customary communications at this address');">
+            <h2>^------ push to bind timelock ------^</h2>
+        </button>
+        <script>
+            // As before show only one image of the spinner
+            $("#spinner img:gt(0)").hide(); 
+            // The spinner and blinker codes are in the spinner.js file
+        </script>
+    </body>
+</html>

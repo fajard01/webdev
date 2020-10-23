@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- 
+    Author: Danny Fajardo
+    This website aims to utilize different techniques and materials
+    from the Coursera class Responsive Web Design. As in class, it uses the bootstrap
+    library for ready-made formatting, and JQuery to provide responsive
+    functionality. The alien graphics have been developed by myself using Inkscape
+    as my SVG editor and GIMP as the final renderer. There are a couple of images
+    from the internet and I thank them to whoever they belong and apologize for
+    not acknowleging them individually properly.
+-->
+<html>
+    <head>
+        <title>HeLLo EArthlings</title>
+        <!-- import bootstrap -->
+        <link rel="stylesheet"
+              type="text/css"
+              href="css/bootstrap.css"
+              />
+        <!-- import own stylesheet -->
+        <link rel="stylesheet"
+              type="text/css"
+              href="css/styles.css"
+              />
+        <!-- import JQuery -->
+        <script src="js/jquery-1.12.0.js"></script>
+        <!-- import own greeting script -->
+        <script src="js/greetings.js"></script>
+    </head>
+    <body>
+        <a href="index.html">HOMe</a> &nbsp;
+        <a href="about.html">AbOUt</a> &nbsp;
+		<a href="contact.html">ContaCT</a>       
+        <!-- 
+             First plan is to create a slideshow of aliens as a greeting to the page.
+             I first place these images in a container and using css fixed positioned them on the central 
+             part of the page. The <div> id will be used to loop them later.
+         -->    
+        <!-- container for aliens -->
+        <div id=aliens>
+            <img src="img/img_1.png" alt="alienita"/img>
+            <img src="img/img_2.png" alt="=alien"/img>
+            <img src="img/img_3.png" alt="aliena"/img>
+            <img src="img/img_4.png" alt="helloaliens"/img>
+        </div>
+        <!-- the main text -->
+        <h1>GrEEtings frOM InXane!!!</h1>
+        <h5>HeLLo EArthLings!!! We are ALiens, eXIstents cURrently on <a id="pop" onclick="alert('The N0W SPaceTime geodetical is the accepted standard measure of SPaceTime from the When Consortium. It is a floating system that reconciles the relativistic positions of different observers.');">
+                N0W_H3r3*</a> 
+            which relATive to EArth is far in your fUtUre. We resIDe on the sMAll planetOId of InXane a few LIghtseCs away frOM the <a id="pop" href="https://en.wikipedia.org/wiki/Horsehead_Nebula">HOrsehead NebUla</a> WHere we mOLd <a id="pop" href="https://en.wikipedia.org/wiki/Warp_drive">WArp DRives</a> for SPaceTime craFTs. We also geNErate and instaLL Time TuNNels - but far more soPHisticated than the <a id="pop", href="https://en.wikipedia.org/wiki/The_Time_Tunnel">'Time Tunnel'</a> you eartHLings deVEloped in your 70's Time.
+            <p></p>
+            The briMMing nEWs is we deVEloped a sYStem for <a id="pop" href="https://en.wikipedia.org/wiki/Spacetime">SPaceTime</a> InterCOommunicaTions. It is N0W possIBle to coMMunicate instantaNEously frOM or to eITher the paST or the fUtUre. This new teCHnology - The WIde WArp WEb - is WHat
+            enABles us to coMMunicate to you riGHt N0W frOM <a id="pop" onclick="alert('The N0W TimeRule is the accepted standard measure of time from the When Consortium. It is a floating system that takes into consideration the relativistic views of different observers.');">
+                N0W_H3r3*</a>!
+            <p></p>
+            The WIde WArp WEb is the lateST in Time WArp teCHnology. It eFFiciently encODes
+            messaGEs into <a id="pop" href="https://en.wikipedia.org/wiki/Superstring_theory">SUpersTRing</a> paCKets and wraPPing these paCKets with wider freCQuency waRPs WHere they ever so briEFly weAVe with the N0 and W_H3r3 diMEnsions of SPaceTime for deLIvery. This enABles transmiSSions to bypaSS the phYSical lAYer and meSSages
+            tranSMit instAntaNEouslY to any Time speCTra. This is how you are recEIving this messAGe.
+            <p></p>
+            This is very new teCHnology and a few thiNGs still won't comPUte. For one, paCKets degRAde WHen 
+            they traVErse certain dEEp SPace waRPs in arEAs of eXTreme gRaVity. Also paCKets still recEIve
+            inteRFerences from positROnic clOUds emiTTed by collAPsing <a id="pop" href="https://en.wikipedia.org/wiki/Wormhole">worMHoles</a>. But these proBLems shoULd find their soLUtions in the nEXt few kil0n0ws. In shOrt, WAtch this SPace!
+        </h5>
+        <script>
+            // At this moment all images are on top of each other. To show only one image the gt() (greater than) selector is used accessing // the <div> container with 'aliens' id and hiding all images greater than 0.
+            $("#aliens img:gt(0)").hide();
+            // The rest of the looping script is in the greetings.js file.
+        </script>
+    </body>
+</html>
