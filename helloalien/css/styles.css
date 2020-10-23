@@ -1,0 +1,183 @@
+/* DOCTYPE css */
+/*
+    Author: Danny Fajardo
+    Most of these css styles were used for positioning the different elements.
+    I also found custom colors give better effect.
+*/
+
+/* centers the aliens and the greeting */
+#aliens {
+    position: relative;
+    left: 35%;
+    right: 40%
+}
+
+/* locks the images in place */
+#aliens img {
+    max-width: 150px;
+    max-height: 100;
+    position: fixed;
+    top: 6%; 
+    left: 43%;
+    margin-bottom: auto;
+}
+
+/* centers the spinning circle */
+#spinner {
+    position:relative;
+}
+
+/* locks the circle elements in one place */
+#spinner img {
+    position: fixed;
+    margin-top: 6%;
+    margin-left: 10%;
+}
+
+
+/* special style for certain <a> tags */
+#pop {
+    margin-left: 0%;
+    font-size: 13px;
+    outline-color: blueviolet;
+    color: brown;
+    text-underline-position: below;
+}
+
+#popup {
+    margin-left: 0%;
+    font-size: 11px;
+    outline-color: blueviolet;
+    color: #AA0044
+    text-underline-position: below;
+}
+
+#current_alien {
+    max-height: 300px;
+    border: solid;
+    background: #DBE2E3;
+    margin-top: 12%;
+    margin-left: 12%;
+}
+
+#timeport {
+    max-height: 159px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+#button {
+    margin-top: 5%;
+    align-content: center;   
+}
+
+/* style for the information sheet */
+.info {
+    font-size: 18px;
+    margin-top: 24%;
+}
+
+/* color of text the same as alien eyes */
+#info1 {
+    color: #F89800;
+}
+
+#info2 {
+    color: #197DE1;
+}
+
+#info3 {
+    color: #A0336F;
+}
+    
+/* frame the alien images */
+.portrait {
+    max-height: 100px;
+    max-width: 100%;
+    margin-top: 35px;
+    align-content: center;
+    border: dotted;
+    border-color: black;
+    background: #DBE2E3;
+}
+
+/* adjustment to the name labels */
+.name {
+    color: #800000;
+    font-size: 15px;
+}
+
+.head {
+    max-height: 200px;
+    max-width: 100%;
+    margin-left: 5%;
+}
+
+.head p {
+    margin-left: 60%;
+}
+
+.ticker {
+    margin-top: 5%;
+    font-family: monospace;
+    font-size: 20px;
+}
+
+a {
+    margin-left: 5%;
+    font-family: monospace;
+    color: #5AA02C;
+    font-style: oblique;
+    font-size: 25px;
+}
+
+a:hover {
+    font: "Arial";
+    color: #800066;
+    font-style: normal;
+    font-size: 25px;
+}
+
+h1 { 
+    font-size: 30px;
+    color: #004455;
+    margin-top: 12%;
+    margin-left: 37%;
+}
+
+h1:hover {
+    color: #AA0088;
+}
+
+/* overrides some of the h1 settings */
+.h1_center {
+    margin-left: 41%;
+    margin-top: 2%;
+}
+
+.h1_portrait {
+    margin-top: 25%;
+    color: #782144
+}
+
+/* discovered by accident you can create a
+flicker effect during hovering by making the
+hover size very small */
+.h1_portrait:hover {
+    font-size: 2%;
+}
+
+.hi1_report {
+    margin-top: 12%;
+    font-family: monospace;
+}
+
+h5 {
+    margin-top: 2%;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-size: 15px;
+    color: #004455;
+}
+
+

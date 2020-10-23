@@ -1,0 +1,103 @@
+<! DOCSTYLE html>
+<!-- 
+    Author: Danny Fajardo
+    The main thrust of this page is to have clickable images of the aliens and produce a bigger portait
+    and information write up of the specific alien. I added a photo of the Horsehead nebula for decoration.
+-->
+<html>
+    <head>
+        <title>HeLLo EArthlings</title>
+        <!-- import bootstrap -->
+        <link rel="stylesheet"
+              type="text/css"
+              href="css/bootstrap.css"
+              />
+        <!-- import own stylesheet -->
+        <link rel="stylesheet"
+              type="text/css"
+              href="css/styles.css"
+              />
+        <!-- import JQuery -->
+        <script src="js/jquery-1.12.0.js"></script>
+    </head>
+    <body>
+        <a href="index.html">HOMe</a> &nbsp;
+        <a href="about.html">AbOUt</a> &nbsp;
+		<a href="contact.html">ContaCT</a>
+        <div class="container">
+            <div class="row">
+                <!-- the click title. I discovered I can make it flicker via CSS when hovered -->
+                <div class="col-md-2">                   
+                    <h2 class="h1_portrait">MEet the ALiens! CliCk --></h2>
+                </div>
+                <!-- container for the portraits -->
+                <div class="col-md-2">
+                    <img id="alien1" class="portrait" src="img/img_1.png" alt="Alienita"/img>
+                    <p class="name">ALienita</p>
+                </div>
+                <div class="col-md-2">
+                    <img id="alien2" class="portrait" src="img/img_2.png" alt="Alien"/img>
+                    <p class="name">ALien</p>
+                </div>
+                <div class="col-md-2">
+                    <img id="alien3" class="portrait" src="img/img_3.png" alt="Alien"/img>
+                    <p class="name">ALiena</p>
+                </div>
+                <div class="col-md--3">
+                    <img id="horsehead" class="head" src="img/HorseHead.jpg" alt="HorseHead"/img>
+                    <a id="pop" href="https://en.wikipedia.org/wiki/Horsehead_Nebula">HOrsehead NebUla</a>
+                </div>
+            </div>
+            <div class="row">
+                <!-- main alien portrait -->
+                <div class="col-md-5">
+                    <img id="current_alien" src="img/img_1.png" alt="Alienita"/img>
+                </div>
+                <!-- the information write up for each Alien -->
+                <div class="col-md-5" id=info_list>
+                    <div>
+                        <p class="info info-a1" id="info1">
+                            ALienita is the laDY BuiLDer. She is eXPert in metaDesiGNs, pseUDofoRCess and FlUIdCrystals
+                            and cuRRently deveLOping synTHetic mUOn drILl to prOBe furTHer into SPaceTime. A FantaSTic
+                            lightBEnder, she cuRRently hoLDs the reCOrd in LasERcuRLing.
+                        </p>
+                        <p class="info info-a2" id="info2";>
+                            ALien is the chiEF EnginEEr. With MInd that coMPutes like a laSEr, he has enginEEred a maCHine that traVElled clOSest to an eVEnt horiZOn. His cuRRent arEA of reSEarch is TimeFOlds WHere he stUDies the posSIbility of sWItching to aNOther paraLLel uniVErse.</p>
+                        <p class="info info-a3" id=info3>
+                            ALiena is the MAster DebuGGer. She can sPOt proBLems WHere there is nONe. With her, no cODe or maCHine is LEft
+                            untURned. She is cuRRently writINg a book on syNThetic recURsion. She has bEEn awaRDed the hiGHest Light MeDAl for her disCOveries in alGOrithm.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 
+            The main function of this script is to display in the main portrait the Alien and Information when the
+            thumbnails are clicked. I did so just like in class by parsing the number from the id and taking that 
+            to populate the information list.
+        -->
+        <script>
+            $("#info_list p:gt(0)").hide();
+            $(".portrait").click(function(){
+                $("#current_alien").attr('src', $(this).attr('src'));
+                var id = $(this).attr("id");
+                var index = parseInt(id.slice(-1));
+                if (index==1) {
+                    $("#info1").show();
+                    $("#info2").hide();
+                    $("#info3").hide();
+                }
+                if (index==2) {
+                    $("#info1").hide();
+                    $("#info2").show();
+                    $("#info3").hide();
+                }
+                if (index==3) {
+                    $("#info1").hide();
+                    $("#info2").hide();
+                    $("#info3").show();
+                }
+            });
+        </script>
+    </body>
+</html>
