@@ -137,21 +137,21 @@ body {
   }
 }
 
-/*
 @media (max-width: 332px) {
   h1 {
-    font-size: 80%;
+    font-size: 1.5em;
   }
 
   h3 {
-    font-size: 80%;
+    font-size: 1em;
   }
 
   .header-title {
     padding-top: 300px;
   }
-} */
-.footer {
+}
+
+*/ .footer {
   /* background: #152f4f; */
   color: white;
 }
