@@ -1,17 +1,20 @@
+![Danny Logo](Danny_Logo_20.png)
+
 ## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/fajard01/webdev/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+This is a repository of web development projects. Websites I've worked on on a personal hobby basis.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+### Projects
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+There are currently three projects on site:
 
 ```markdown
-Syntax highlighted code block
 
-# Header 1
+# helloalien(https://fajard01.github.io/webdev/index.html/helloalien)
+
+```markdown
+
 ## Header 2
 ### Header 3
 
