@@ -11,39 +11,32 @@ body {
   font-family: 'Quicksand', sans-serif;
 }
 
-/***** NAVIGATION BAR *****/
-#header-nav {
-  background: transparent;
-  border-radius: 0;
-  border: 0;
-  filter: invert(1);
-  padding-top: 0;
-}
-
 /***** LOGO AND BRAND *****/
-#logo-img {
+#imgLogo {
   style.display: none;
 }
 
 .m-name {
+  color: black;
   font-size: 25px;
   font-weight: bold;
 }
 
 /***** SOCIAL MEDIA ICONS *****/
-.social-media-icon {
-  /* margin-top: 20px; */
+.fab {
+  color: white;
+  padding-top: 14px;
   margin-left: 20px;
 }
 
 /***** MAIN IMAGE *****/
-#greeter-img {
+#imgGreeter {
   padding: 0;
   margin: 0;
 }
 
 .image {
-  background-image: url("../img/picchu-header.jpg");
+  background-image: url("../img/init/picchu-header.jpg");
   background-size: cover;
   height: 1200px;
   margin: 0;
@@ -117,35 +110,23 @@ body {
 }
 
 /***** MEDIA QUERIES *****/
-@media (max-width: 991px) {
-  .social-media-icon {
-    padding-top: 30px;
-  }
-}
+/********** Large devices only **********/
+@media (min-width: 1200px) {}
 
-@media (min-width: 333px) and (max-width: 572px) {
-  h1 {
-    font-size: 1.5em;
-  }
+/********** Medium devices only **********/
+@media (min-width: 992px) and (max-width: 1199px) {}
 
-  h3 {
-    font-size: 1em;
-  }
+/********** Small devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {}
 
+/********** Small devices only **********/
+@media (max-width: 767px) {
   .header-title {
     padding-top: 250px;
   }
 }
 
 @media (max-width: 332px) {
-  h1 {
-    font-size: 1.5em;
-  }
-
-  h3 {
-    font-size: 1em;
-  }
-
   .header-title {
     padding-top: 300px;
   }

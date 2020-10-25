@@ -16,38 +16,37 @@
   </head>
 
   <body>
-    <div class="container-fluid">
-      <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-          <ul class="nav navbar-nav">
-            <li><a id="len1"
-                 class="hoverable"
-                 href="#">Home</a></li>
-            <li><a id="len2"
-                 class="hoverable"
-                 href="#">About</a></li>
-            <li><a id="len3"
-                 class="hoverable"
-                 href="#">Portfolio</a></li>
-            <li><a id="len4"
-                 class="hoverable"
-                 href="#">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-      <div id="what-the-hell-is-this">
-        <div class="page-title">
-          <h2>Simple Navigation</h2>
-          <p class="lead">
-            Based on Hover.css, the goal of this pen
-            is to create a simple navigation bar <br />
-            that can be easily reused in both mobile and native displays. Mouse over the nav text for animation!
-          </p>
-        </div>
-      </div>
+    <div id="navbarMain"
+         class="container-fluid">
+      <script>
+        $(function() {
+          $("#navbarMain").load("tp/navbar.html")
+        });
+
+      </script>
     </div>
-    <h1>Under construction</h1>
-    <h2>No idea how to implement this page yet but this is IN the arrival days.</h2>
+    <link rel="stylesheet"
+          type="text/css"
+          href="css/in.css" />
+    <div class="content">
+      <section>
+        <h2>My Blog!</h2>
+        <div class=container>
+          <a href="#"><img class="newsletter"
+                 alt="1 News!"
+                 src="img/in/1_m.jpg" />
+          </a>
+          <div class="overlay">
+            1 News!
+          </div>
+        </div>
+        <a href="#"><img class="newsletter"
+               alt="2 News 2"
+               src="img/in/2_m.jpg" />
+        </a>
+      </section>
+    </div>
+
   </body>
 
 </html>

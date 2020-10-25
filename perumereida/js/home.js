@@ -1,3 +1,16 @@
+
+// document.addEventListener("DOMContentLoaded", theDomHasLoaded, true);
+// window.addEventListener("load", pageFullyLoaded, true);
+
+// function theDomHasLoaded(e){
+//     $('body').css('visibility', 'visible');
+// };
+
+// VISIBILITY //
+// $(function(){
+//     $('body').css('visibility', 'visible');
+// });
+
 // TOGGLE TRANSPARENCY ON SCROLL //
 $(window).scroll(function(){
     var logo = document.getElementById('logo-img');
@@ -6,23 +19,23 @@ $(window).scroll(function(){
         $('.fixed-top').css('background', 'black');
         $('.fixed-top').css('filter', 'invert(0)');
         $('.fixed-top').css('padding', '0');
-        logo.style.display = "block";
     } else{
         $('.fixed-top').css('background', 'transparent');
         $('.fixed-top').css('filter', 'invert(1)');
         $('.fixed-top').css('padding', '50px');
-        logo.style.display = "none";
     }
 });
 
-// LEFT JUSTIFY SOCIAL ICONS ON MEDIA QUERY
-// $(window).resize(function(){
-//     if($(window).width()<767){
-//       $('.navbar-nav').removeClass('ml-auto');
-//       $('.navbar-nav').addClass('mr-auto');
-//       $('.social-media-icon').css('padding-left', '0');
-//     else{
-//       $('.navbar-nav').removeClass('mr-auto');
-//       $('.navbar-nav').addClass('ml-auto');
-//    }
-// });
+
+$(function(){
+    var current = location.pathname;
+    $('#navbarMain a').each(function(){
+        var $this = $(this);
+        // if the current path is like this link, make it active
+        if($this.attr('href').indexOf(current) !== -1){
+            $this.addClass('active');
+            $this.css('background-color', 'white');
+            $this.css('color', 'black');
+        }
+    })
+});
